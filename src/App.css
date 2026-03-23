@@ -587,7 +587,6 @@ body {
   font-size: 18px;
   color: var(--text-muted);
   max-width: 600px;
-  margin: 0 auto;
 }
 
 /* ============================================
@@ -1113,10 +1112,15 @@ body {
   gap: 60px;
 }
 
+.contact-info {
+  text-align: left;
+}
+
 .contact-info h2 {
   font-size: 42px;
   color: var(--secondary-color);
   margin-bottom: 15px;
+  text-align: left;
 }
 
 .contact-info > p {
@@ -1124,12 +1128,14 @@ body {
   font-size: 16px;
   margin-bottom: 40px;
   line-height: 1.7;
+  text-align: left;
 }
 
 .contact-details {
   display: flex;
   flex-direction: column;
   gap: 25px;
+  text-align: left;
 }
 
 .contact-item {
