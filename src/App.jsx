@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import emailjs from "@emailjs/browser";
 import './App.css'
 import carWash from './assets/car-wash2.webp';
 import interior from './assets/car-interior.webp';
@@ -51,6 +52,29 @@ function App() {
     }
   ]
 
+  const handleSubmit = (e) => {
+  e.preventDefault();
+
+  if (!agreedToTerms) {
+    alert("Please agree to Terms");
+    return;
+  }
+
+  emailjs.send(
+    "service_ztu7c3b",   // from EmailJS
+    "template_q1eumts",  // from EmailJS
+    formData,            // your form data
+    "gsR2gCJFG5q01Xddf"    // from EmailJS
+  )
+  .then(() => {
+    alert("Email sent successfully ✅");
+  })
+  .catch((error) => {
+    console.error(error);
+    alert("Failed ❌");
+  });
+};
+
   useEffect(() => {
     if (!isAutoPlaying) return
     const interval = setInterval(() => {
@@ -74,16 +98,16 @@ function App() {
 
   const [agreedToTerms, setAgreedToTerms] = useState(false)
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    if (!agreedToTerms) {
-      alert('Please agree to the Terms and Conditions to proceed.')
-      return
-    }
-    alert('Thank you for your inquiry! We will contact you shortly.')
-    setFormData({ name: '', phone: '', service: '', message: '' })
-    setAgreedToTerms(false)
-  }
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   if (!agreedToTerms) {
+  //     alert('Please agree to the Terms and Conditions to proceed.')
+  //     return
+  //   }
+  //   alert('Thank you for your inquiry! We will contact you shortly.')
+  //   setFormData({ name: '', phone: '', service: '', message: '' })
+  //   setAgreedToTerms(false)
+  // }
 
   const services = [
     {
