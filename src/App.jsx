@@ -12,6 +12,11 @@ function App() {
       subtitle: 'Transform your vehicle with our professional detailing services'
     },
     {
+      image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1920&h=1080&fit=crop',
+      title: 'Car Wash',
+      subtitle: 'Professional wash and rinse for a sparkling clean vehicle'
+    },
+    {
       image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=1920&h=1080&fit=crop',
       title: 'Full Interior Detailing',
       subtitle: 'Deep cleaning for a fresh and luxurious interior'
@@ -32,7 +37,7 @@ function App() {
       subtitle: 'Restore your paint to perfection'
     },
     {
-      image: 'https://images.unsplash.com/photo-1580273916550-e323be2ed5fa?w=1920&h=1080&fit=crop',
+      image: 'https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1920&h=1080&fit=crop',
       title: 'Luxury Car Care',
       subtitle: 'Premium treatment for high-end vehicles'
     }
@@ -96,6 +101,21 @@ function App() {
       icon: '🧽',
       title: 'Wheel & Tire Care',
       description: 'Deep cleaning, rim polishing, and tire dressing for perfectly detailed wheels and tires.'
+    },
+    {
+      icon: '🔦',
+      title: 'Headlight Restoration',
+      description: 'Remove oxidation and restore clarity to foggy headlights for improved visibility and appearance.'
+    },
+    {
+      icon: '🪟',
+      title: 'Window Tinting',
+      description: 'Professional window tinting for UV protection, privacy, and enhanced vehicle aesthetics.'
+    },
+    {
+      icon: '🎨',
+      title: 'Dent Removal',
+      description: 'Paintless dent removal services to restore your vehicle\'s body without affecting the original paint.'
     }
   ]
 
@@ -117,6 +137,33 @@ function App() {
       car: 'Porsche 911',
       text: 'Professional, punctual, and perfectionist. They treated my car like their own. Highly recommend!',
       rating: 5
+    }
+  ]
+
+  const beforeAfterComparisons = [
+    {
+      title: 'Paint Correction',
+      description: 'Swirl marks and oxidation removed, paint restored to factory finish',
+      before: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=600&h=400&fit=crop',
+      after: 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=600&h=400&fit=crop'
+    },
+    {
+      title: 'Interior Deep Cleaning',
+      description: 'Stains removed, leather conditioned, dashboard restored to like-new',
+      before: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&h=400&fit=crop',
+      after: 'https://images.unsplash.com/photo-1507136566006-cfc505b114fc?w=600&h=400&fit=crop'
+    },
+    {
+      title: 'Ceramic Coating',
+      description: 'Hydrophobic protection applied, deep gloss and shine achieved',
+      before: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&h=400&fit=crop',
+      after: 'https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=600&h=400&fit=crop'
+    },
+    {
+      title: 'Wheel & Tire Restoration',
+      description: 'Brake dust removed, rims polished, tires dressed for perfect finish',
+      before: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=600&h=400&fit=crop',
+      after: 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=600&h=400&fit=crop'
     }
   ]
 
@@ -222,9 +269,9 @@ function App() {
           <div className="about-content">
             <div className="about-image">
               <div className="about-img-wrapper">
-                <img src="https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=500&h=600&fit=crop" alt="Car Detailing Workshop" />
+                <img src="https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=500&h=600&fit=crop" alt="Car Detailing Workshop" />
                 <div className="about-experience">
-                  <span className="experience-years">15</span>
+                  <span className="experience-years">5</span>
                   <span className="experience-text">Years of Excellence</span>
                 </div>
               </div>
@@ -266,7 +313,7 @@ function App() {
             <p>Professional detailing packages tailored to your vehicle's needs</p>
           </div>
           <div className="services-grid">
-            {services.slice(0, 4).map((service, index) => (
+            {services.slice(0, 6).map((service, index) => (
               <div className="service-card" key={index}>
                 <div className="service-icon">{service.icon}</div>
                 <h3>{service.title}</h3>
@@ -277,6 +324,37 @@ function App() {
           </div>
           <div className="gallery-cta">
             <a href="#services" className="btn btn-primary">View All Services</a>
+          </div>
+        </div>
+      </section>
+
+      {/* Before & After Comparison Section */}
+      <section className="before-after">
+        <div className="container">
+          <div className="section-header">
+            <span className="section-tag">Transformation</span>
+            <h2>Before & After</h2>
+            <p>See the incredible transformations we've achieved for our clients</p>
+          </div>
+          <div className="before-after-grid">
+            {beforeAfterComparisons.map((comparison, index) => (
+              <div className="comparison-card" key={index}>
+                <div className="comparison-images">
+                  <div className="comparison-image-wrapper">
+                    <img src={comparison.before} alt={`${comparison.title} - Before`} />
+                    <span className="comparison-label before-label">BEFORE</span>
+                  </div>
+                  <div className="comparison-image-wrapper">
+                    <img src={comparison.after} alt={`${comparison.title} - After`} />
+                    <span className="comparison-label after-label">AFTER</span>
+                  </div>
+                </div>
+                <div className="comparison-info">
+                  <h3>{comparison.title}</h3>
+                  <p>{comparison.description}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

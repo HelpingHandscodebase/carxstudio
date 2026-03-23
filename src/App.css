@@ -1302,6 +1302,98 @@ body {
 }
 
 /* ============================================
+   Before & After Comparison Section
+   ============================================ */
+.before-after {
+  padding: 100px 0;
+  background: var(--light-bg);
+}
+
+.before-after .section-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.before-after-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.comparison-card {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: var(--transition);
+}
+
+.comparison-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.comparison-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+
+.comparison-image-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.comparison-image-wrapper img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.comparison-card:hover .comparison-image-wrapper img {
+  transform: scale(1.05);
+}
+
+.comparison-label {
+  position: absolute;
+  top: 15px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 4px;
+}
+
+.before-label {
+  left: 15px;
+  background: rgba(255, 107, 53, 0.95);
+  color: var(--white);
+}
+
+.after-label {
+  right: 15px;
+  background: rgba(46, 204, 113, 0.95);
+  color: var(--white);
+}
+
+.comparison-info {
+  padding: 25px;
+}
+
+.comparison-info h3 {
+  font-size: 20px;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.comparison-info p {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ============================================
    Responsive Styles
    ============================================ */
 @media (max-width: 1024px) {
@@ -1328,6 +1420,10 @@ body {
   
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .before-after-grid {
+    grid-template-columns: 1fr;
   }
   
   .about-content {
