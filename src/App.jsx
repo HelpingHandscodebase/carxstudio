@@ -416,14 +416,15 @@ function App() {
                   <span className="contact-icon">📍</span>
                   <div>
                     <h4>Location</h4>
-                    <p>123 Detailing Lane, Auto City, AC 12345</p>
+                    {/* <p>123 Detailing Lane, Auto City, AC 12345</p> */}
+                    <p>HEMU NAGAR CHOWK, BESIDE APNA MART SUPERMARKET, BILASPUR CHHATTISGARH</p>
                   </div>
                 </div>
                 <div className="contact-item">
                   <span className="contact-icon">📞</span>
                   <div>
                     <h4>Phone</h4>
-                    <p>(555) 123-4567</p>
+                    <p>+91 9755566525</p>
                   </div>
                 </div>
                 <div className="contact-item">
@@ -554,7 +555,7 @@ function App() {
             </div>
           </div>
           <div className="footer-bottom">
-            <p>&copy; 2024 CarXStudio. All rights reserved. | Designed with ❤️</p>
+            <p>&copy; Copyright Helping Hands Technologies. All Rights Reserved</p>
           </div>
         </div>
       </footer>
