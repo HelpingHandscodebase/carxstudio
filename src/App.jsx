@@ -59,16 +59,22 @@ function App() {
 
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
     phone: '',
     service: '',
     message: ''
   })
 
+  const [agreedToTerms, setAgreedToTerms] = useState(false)
+
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (!agreedToTerms) {
+      alert('Please agree to the Terms and Conditions to proceed.')
+      return
+    }
     alert('Thank you for your inquiry! We will contact you shortly.')
-    setFormData({ name: '', email: '', phone: '', service: '', message: '' })
+    setFormData({ name: '', phone: '', service: '', message: '' })
+    setAgreedToTerms(false)
   }
 
   const services = [
@@ -180,7 +186,6 @@ function App() {
             <li><a href="#home">Home</a></li>
             <li><a href="#services">Services</a></li>
             <li><a href="#about">About</a></li>
-            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#contact" className="nav-cta">Book Now</a></li>
           </ul>
           <div className="hamburger">
@@ -300,30 +305,6 @@ function App() {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Gallery Section */}
-      <section id="gallery" className="gallery">
-        <div className="container">
-          <div className="section-header">
-            <span className="section-tag">Our Services</span>
-            <h2>What We Offer</h2>
-            <p>Professional detailing packages tailored to your vehicle's needs</p>
-          </div>
-          <div className="services-grid">
-            {services.slice(0, 6).map((service, index) => (
-              <div className="service-card" key={index}>
-                <div className="service-icon">{service.icon}</div>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-                <a href="#contact" className="service-link">Learn More →</a>
-              </div>
-            ))}
-          </div>
-          <div className="gallery-cta">
-            <a href="#services" className="btn btn-primary">View All Services</a>
           </div>
         </div>
       </section>
@@ -476,23 +457,16 @@ function App() {
                 </div>
                 <div className="form-group">
                   <input 
-                    type="email" 
-                    placeholder="Email Address" 
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    required 
-                  />
-                </div>
-                <div className="form-group">
-                  <input 
                     type="tel" 
                     placeholder="Phone Number" 
                     value={formData.phone}
                     onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    required
                   />
                 </div>
                 <div className="form-group">
                   <select 
+                    className="form-select"
                     value={formData.service}
                     onChange={(e) => setFormData({...formData, service: e.target.value})}
                     required
@@ -500,9 +474,16 @@ function App() {
                     <option value="">Select Service</option>
                     <option value="exterior">Exterior Detailing</option>
                     <option value="interior">Interior Detailing</option>
+                    <option value="full">Full Detail Package</option>
                     <option value="ceramic">Ceramic Coating</option>
                     <option value="ppf">Paint Protection Film</option>
-                    <option value="full">Full Detail Package</option>
+                    <option value="engine">Engine Bay Cleaning</option>
+                    <option value="wheel">Wheel & Tire Care</option>
+                    <option value="headlight">Headlight Restoration</option>
+                    <option value="window">Window Tinting</option>
+                    <option value="dent">Dent Removal</option>
+                    <option value="upholstery">Upholstery Cleaning</option>
+                    <option value="other">Other</option>
                   </select>
                 </div>
                 <div className="form-group">
@@ -512,6 +493,19 @@ function App() {
                     value={formData.message}
                     onChange={(e) => setFormData({...formData, message: e.target.value})}
                   ></textarea>
+                </div>
+                <div className="terms-conditions">
+                  <label className="terms-checkbox">
+                    <input 
+                      type="checkbox" 
+                      checked={agreedToTerms}
+                      onChange={(e) => setAgreedToTerms(e.target.checked)}
+                    />
+                    <span className="checkmark"></span>
+                    <span className="terms-text">
+                      I agree to the <a href="#terms" onClick={(e) => {e.preventDefault(); alert('Terms & Conditions: Once the service is completed and the vehicle leaves our premises, all claims will be void. No refunds or re-work will be provided after vehicle collection.');}}>Terms & Conditions</a>. I understand that once the vehicle leaves the service station, no claims can be made.
+                    </span>
+                  </label>
                 </div>
                 <button type="submit" className="btn btn-primary btn-full">Send Request</button>
               </form>
@@ -544,7 +538,6 @@ function App() {
                   <li><a href="#home">Home</a></li>
                   <li><a href="#services">Services</a></li>
                   <li><a href="#about">About</a></li>
-                  <li><a href="#gallery">Gallery</a></li>
                   <li><a href="#contact">Contact</a></li>
                 </ul>
               </div>
