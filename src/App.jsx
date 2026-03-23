@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import carWash from './assets/car-wash2.webp';
+import interior from './assets/car-interior.webp';
+import Luxury from './assets/car3.webp';
+import Paint from './assets/car-paint.webp';
 
 function App() {
   const [activeSlide, setActiveSlide] = useState(0)
@@ -12,12 +16,14 @@ function App() {
       subtitle: 'Transform your vehicle with our professional detailing services'
     },
     {
-      image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1920&h=1080&fit=crop',
+      // image: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=1920&h=1080&fit=crop',
+      image: carWash,
       title: 'Car Wash',
       subtitle: 'Professional wash and rinse for a sparkling clean vehicle'
     },
     {
-      image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=1920&h=1080&fit=crop',
+      // image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=1920&h=1080&fit=crop',
+      image: interior,
       title: 'Full Interior Detailing',
       subtitle: 'Deep cleaning for a fresh and luxurious interior'
     },
@@ -32,12 +38,14 @@ function App() {
       subtitle: 'Advanced protection for lasting brilliance'
     },
     {
-      image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1920&h=1080&fit=crop',
+      // image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=1920&h=1080&fit=crop',
+      image: Paint,
       title: 'Paint Correction',
       subtitle: 'Restore your paint to perfection'
     },
     {
-      image: 'https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1920&h=1080&fit=crop',
+      // image: 'https://images.unsplash.com/photo-1617531653332-bd46c24f2068?w=1920&h=1080&fit=crop',
+      image: Luxury,
       title: 'Luxury Car Care',
       subtitle: 'Premium treatment for high-end vehicles'
     }
@@ -416,7 +424,6 @@ function App() {
                   <span className="contact-icon">📍</span>
                   <div>
                     <h4>Location</h4>
-                    {/* <p>123 Detailing Lane, Auto City, AC 12345</p> */}
                     <p>HEMU NAGAR CHOWK, BESIDE APNA MART SUPERMARKET, BILASPUR CHHATTISGARH</p>
                   </div>
                 </div>
