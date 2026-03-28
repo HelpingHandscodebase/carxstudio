@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react'
 import emailjs from "@emailjs/browser";
 import './App.css'
-import carWash from './assets/car-wash2.webp';
-import interior from './assets/car-interior.webp';
-import Luxury from './assets/car3.webp';
-import Paint from './assets/car-paint.webp';
+import carWash from './assets/car-washing.webp';
+import interior from './assets/car-interior1.webp';
+import Luxury from './assets/luxury-car-care.webp';
+import Paint from './assets/car-color.webp';
+import Exterior from './assets/car-exterior-detailing.webp';
+import Ceramic from './assets/close-up-car-care.webp';
+import Premium from './assets/premium-car-detailing.webp';
 
 function App() {
   const [activeSlide, setActiveSlide] = useState(0)
@@ -12,7 +15,8 @@ function App() {
   
   const carouselImages = [
     {
-      image: 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=1920&h=1080&fit=crop',
+      // image: 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=1920&h=1080&fit=crop',
+      image: Premium,
       title: 'Premium Car Detailing',
       subtitle: 'Transform your vehicle with our professional detailing services'
     },
@@ -29,12 +33,14 @@ function App() {
       subtitle: 'Deep cleaning for a fresh and luxurious interior'
     },
     {
-      image: 'https://images.unsplash.com/photo-1507136566006-cfc505b114fc?w=1920&h=1080&fit=crop',
+      // image: 'https://images.unsplash.com/photo-1507136566006-cfc505b114fc?w=1920&h=1080&fit=crop',
+      image: Exterior,
       title: 'Exterior Excellence',
       subtitle: 'Showroom shine with our premium wash and wax'
     },
     {
-      image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&h=1080&fit=crop',
+      // image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&h=1080&fit=crop',
+      image: Ceramic,
       title: 'Ceramic Coating',
       subtitle: 'Advanced protection for lasting brilliance'
     },
