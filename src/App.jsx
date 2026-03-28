@@ -261,8 +261,11 @@ function App() {
                 href="https://wa.me/?text=Check%20out%20this%20website:%20https://google.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="whatsapp-btn nav-w"
+                style={{ display: "flex", alignItems: "center", gap: "6px" }}
               >
-                {/* <FaWhatsapp /> */}Share on Whatsapp
+                <span>Share on </span>
+                <FaWhatsapp />
               </a>
             </li>
             <li>
